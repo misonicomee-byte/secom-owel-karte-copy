@@ -1,88 +1,95 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-      <meta charset="UTF-8">
-      <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-      <div class="container">
-            <h2>📋 カルテコピー</h2>
-          
-          <div id="error-message" class="error hidden"></div>div>
-          
-          <div id="loading" class="loading hidden">
-                <div class="spinner"></div>div>
-                <div id="loading-text">読み込み中...</div>div>
-                <div id="loading-progress"></div>div>
-          </div>div>
-          
-          <div id="patient-info" class="patient-info hidden">
-                <div class="patient-name"></div>div>
-                <div class="patient-details"></div>div>
-          </div>div>
-          
-          <div id="load-section" class="hidden">
-                <div class="info-box">
-                        <div>📄 現在表示中: <strong id="current-page-info">ページ1</strong>strong></div>
-                        <div>📊 全<strong id="total-pages">20</strong>strong>ページ</div>
-                </div>
-                <button id="load-all-btn" class="btn btn-secondary">
-                  🔄 全ページを読み込む
-                </button>button>
-          </div>
-          
-          <div id="range-section" class="hidden">
-                  <div class="section-title">📅 コピー範囲を選択</div>
+    <div class="container">
+      <h2>📋 カルテコピー</h2>
 
-                  <div class="total-entries">
-                            全 <strong id="total-entries">0</strong>strong> 件のエントリー
-                  </div>
+      <div id="error-message" class="error hidden"></div>
 
-                  <div class="range-selector">
-                            <div class="range-row">
-                                        <label>開始:</label>
-                                      <select id="start-entry"></select>select>
-                            </div>
-                          <div class="range-row">
-                                    <label>終了:</label>
-                                    <select id="end-entry"></select>select>
-                          </div>
-                  </div>
-                
-                <div class="quick-buttons">
-                        <button id="select-all" class="btn btn-small">全選択</button>button>
-                        <button id="select-latest" class="btn btn-small">最新1件</button>button>
-                        <button id="select-latest5" class="btn btn-small">最新5件</button>button>
-                        <button id="select-latest10" class="btn btn-small">最新10件</button>button>
-                </div>
-                
-                <div id="selection-preview" class="preview">
-                        選択中: <span id="selected-count">0</span>span>件
-                        <span id="date-range"></span>span>
-                </div>
-                
-                <div class="options">
-                        <label><input type="checkbox" id="include-patient-info" checked> 患者情報を含める</label>
-                        <label><input type="checkbox" id="include-vitals" checked> バイタルを含める</label>
-                        <div class="format-selector">
-                                  <span class="format-label">出力形式:</span>span>
-                                  <label><input type="radio" name="output-format" value="text" checked> テキスト</label>
-                                  <label><input type="radio" name="output-format" value="json"> JSON</label>
-                        </div>
-                </div>
-                
-                <div class="action-buttons">
-                        <button id="copy-btn" class="btn btn-primary">📋 クリップボードにコピー</button>button>
-                        <button id="download-btn" class="btn btn-download">💾 ファイルをダウンロード</button>button>
-                </div>
-          </div>
-          
-          <div id="success-message" class="success hidden"></div>
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <div id="loading-text">読み込み中...</div>
+        <div id="loading-progress"></div>
       </div>
-    
+
+      <div id="patient-info" class="patient-info hidden">
+        <div class="patient-name"></div>
+        <div class="patient-details"></div>
+      </div>
+
+      <div id="load-section" class="hidden">
+        <div class="info-box">
+          <div>📄 現在表示中: <strong id="current-page-info">ページ1</strong></div>
+          <div>📊 全<strong id="total-pages">20</strong>ページ</div>
+        </div>
+        <div class="section-title">📥 読み込むページ数を選択</div>
+        <div class="load-buttons">
+          <button id="load-1-btn" class="btn btn-small">最新1ページ</button>
+          <button id="load-3-btn" class="btn btn-small">最新3ページ</button>
+          <button id="load-5-btn" class="btn btn-small">最新5ページ</button>
+          <button id="load-all-btn" class="btn btn-secondary">🔄 全ページ</button>
+        </div>
+      </div>
+
+      <div id="range-section" class="hidden">
+        <div class="section-title">📅 コピー範囲を選択</div>
+
+        <div class="total-entries">
+          全 <strong id="total-entries">0</strong> 件のエントリー
+        </div>
+
+        <div class="range-selector">
+          <div class="range-row">
+            <label>開始:</label>
+            <select id="start-entry"></select>
+          </div>
+          <div class="range-row">
+            <label>終了:</label>
+            <select id="end-entry"></select>
+          </div>
+        </div>
+
+        <div class="quick-buttons">
+          <button id="select-all" class="btn btn-small">全選択</button>
+          <button id="select-latest" class="btn btn-small">最新1件</button>
+          <button id="select-latest5" class="btn btn-small">最新5件</button>
+          <button id="select-latest10" class="btn btn-small">最新10件</button>
+        </div>
+
+        <div id="selection-preview" class="preview">
+          選択中: <span id="selected-count">0</span>件
+          <span id="date-range"></span>
+        </div>
+
+        <div class="options">
+          <label><input type="checkbox" id="include-patient-info" checked> 患者情報を含める</label>
+          <label><input type="checkbox" id="include-vitals" checked> バイタルを含める</label>
+          <div class="format-selector">
+            <span class="format-label">出力形式:</span>
+            <label><input type="radio" name="output-format" value="text" checked> テキスト</label>
+            <label><input type="radio" name="output-format" value="json"> JSON</label>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="copy-btn" class="btn btn-primary">📋 クリップボードにコピー</button>
+          <button id="download-btn" class="btn btn-download">💾 ファイルをダウンロード</button>
+        </div>
+      </div>
+
+      <div id="success-overlay" class="success-overlay hidden">
+        <div class="success-content">
+          <div class="success-icon" id="success-icon">✅</div>
+          <div class="success-title" id="success-title">コピー完了！</div>
+          <div class="success-detail" id="success-detail">クリップボードにコピーしました</div>
+        </div>
+      </div>
+    </div>
+
     <script src="popup.js"></script>
   </body>
-</html>html></label></label>
-          </div></div></h2>
-  </body>
-  </head>
+</html>
