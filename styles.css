@@ -1,0 +1,43 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; font-size: 13px; width: 340px; background: #f5f5f5; }
+.container { padding: 15px; }
+h2 { font-size: 16px; color: #333; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #4CAF50; }
+.hidden { display: none !important; }
+.error { background: #ffebee; color: #c62828; padding: 10px; border-radius: 4px; margin-bottom: 10px; }
+.loading { text-align: center; padding: 20px; color: #666; }
+.spinner { width: 30px; height: 30px; border: 3px solid #e0e0e0; border-top-color: #4CAF50; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 10px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+#loading-progress { font-size: 12px; color: #888; margin-top: 5px; }
+.patient-info { background: #e3f2fd; padding: 10px; border-radius: 6px; margin-bottom: 12px; }
+.patient-name { font-size: 15px; font-weight: bold; color: #1565c0; }
+.patient-details { font-size: 12px; color: #666; margin-top: 4px; }
+.info-box { background: #fff; padding: 10px; border-radius: 6px; border: 1px solid #ddd; margin-bottom: 10px; font-size: 13px; }
+.info-box div { margin: 3px 0; }
+.section-title { font-weight: bold; color: #333; margin-bottom: 10px; }
+.total-entries { background: #e8f5e9; padding: 8px; border-radius: 4px; margin-bottom: 10px; text-align: center; }
+.range-selector { background: #fff; padding: 10px; border-radius: 6px; border: 1px solid #ddd; margin-bottom: 10px; }
+.range-row { display: flex; align-items: center; margin-bottom: 8px; }
+.range-row:last-child { margin-bottom: 0; }
+.range-row label { width: 45px; font-weight: bold; color: #555; }
+.range-row select { flex: 1; padding: 6px; border: 1px solid #ccc; border-radius: 4px; font-size: 11px; }
+.quick-buttons { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.btn { padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 12px; transition: background 0.2s; }
+.btn-small { padding: 5px 8px; background: #e0e0e0; color: #333; }
+.btn-small:hover { background: #bdbdbd; }
+.btn-secondary { width: 100%; background: #2196F3; color: white; font-size: 13px; }
+.btn-secondary:hover { background: #1976D2; }
+.btn-primary { width: 100%; background: #4CAF50; color: white; font-size: 14px; font-weight: bold; }
+.btn-primary:hover { background: #43a047; }
+.btn-download { width: 100%; background: #FF9800; color: white; font-size: 14px; font-weight: bold; }
+.btn-download:hover { background: #F57C00; }
+.preview { background: #fff3e0; padding: 8px; border-radius: 4px; font-size: 12px; color: #e65100; margin-bottom: 10px; }
+#date-range { display: block; margin-top: 4px; font-size: 11px; color: #888; }
+.options { margin-bottom: 10px; }
+.options label { display: block; padding: 4px 0; font-size: 12px; color: #555; cursor: pointer; }
+.options input[type="checkbox"] { margin-right: 6px; }
+.format-selector { margin-top: 8px; padding-top: 8px; border-top: 1px solid #eee; }
+.format-label { font-weight: bold; margin-right: 10px; }
+.format-selector label { display: inline-block; margin-right: 15px; }
+.format-selector input[type="radio"] { margin-right: 4px; }
+.action-buttons { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.success { background: #e8f5e9; color: #2e7d32; padding: 10px; border-radius: 4px; text-align: center; margin-top: 10px; }
