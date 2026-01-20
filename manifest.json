@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "SECOM OWEL カルテコピー",
+    "version": "2.0.0",
+    "description": "SECOM OWEL電子カルテの情報を範囲選択してコピー・ダウンロードするChrome拡張機能",
+    "permissions": [
+          "activeTab",
+          "scripting"
+    ],
+    "host_permissions": [
+          "https://*.secom-owel.jp/*"
+    ],
+    "action": {
+          "default_popup": "popup.html",
+          "default_icon": {
+                  "48": "icon.png"
+          }
+    },
+    "icons": {
+          "48": "icon.png"
+    }
+}
